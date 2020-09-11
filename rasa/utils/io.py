@@ -9,10 +9,10 @@ import zipfile
 from asyncio import AbstractEventLoop
 from io import BytesIO as IOReader
 from pathlib import Path
-from typing import Text, Any, Dict, Union, List, Type, Callable, TYPE_CHECKING
+from typing import Text, Any, Union, List, Type, Callable, TYPE_CHECKING
 
 from rasa.shared.constants import DEFAULT_LOG_LEVEL, ENV_LOG_LEVEL
-from rasa.shared.utils.io import write_text_file, DEFAULT_ENCODING, read_file, read_yaml
+from rasa.shared.utils.io import write_text_file, DEFAULT_ENCODING, read_file
 
 if TYPE_CHECKING:
     from prompt_toolkit.validation import Validator
@@ -78,26 +78,6 @@ def pickle_load(filename: Union[Text, Path]) -> Any:
         return pickle.load(f)
 
 
-def read_config_file(filename: Text) -> Dict[Text, Any]:
-    """Parses a yaml configuration file. Content needs to be a dictionary
-
-    Args:
-        filename: The path to the file which should be read.
-    """
-    content = read_yaml(read_file(filename))
-
-    if content is None:
-        return {}
-    elif isinstance(content, dict):
-        return content
-    else:
-        raise ValueError(
-            "Tried to load invalid config file '{}'. "
-            "Expected a key value mapping but found {}"
-            ".".format(filename, type(content))
-        )
-
-
 def unarchive(byte_array: bytes, directory: Text) -> Text:
     """Tries to unpack a byte array interpreting it as an archive.
 
@@ -113,16 +93,6 @@ def unarchive(byte_array: bytes, directory: Text) -> Text:
         zip_ref.extractall(directory)
         zip_ref.close()
         return directory
-
-
-def is_subdirectory(path: Text, potential_parent_directory: Text) -> bool:
-    if path is None or potential_parent_directory is None:
-        return False
-
-    path = os.path.abspath(path)
-    potential_parent_directory = os.path.abspath(potential_parent_directory)
-
-    return potential_parent_directory in path
 
 
 def create_temporary_file(data: Any, suffix: Text = "", mode: Text = "w+") -> Text:

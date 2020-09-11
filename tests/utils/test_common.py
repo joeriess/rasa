@@ -6,9 +6,9 @@ import pytest
 from rasa.constants import NEXT_MAJOR_VERSION_FOR_DEPRECATIONS
 from rasa.utils.common import (
     raise_deprecation_warning,
-    transform_collection_to_sentence,
     RepeatedLogFilter,
 )
+from rasa.shared.utils.common import transform_collection_to_sentence
 
 
 @pytest.mark.parametrize(
