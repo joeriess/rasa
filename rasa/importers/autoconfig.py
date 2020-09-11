@@ -6,6 +6,7 @@ from enum import Enum
 from typing import Text, Dict, Any, List, Set, Optional
 
 import rasa.constants as constants
+import rasa.shared.constants
 import rasa.shared.utils.io
 import rasa.utils.common as common_utils
 import rasa.cli.utils as cli_utils
@@ -18,13 +19,13 @@ COMMENTS_FOR_KEYS = {
         f"# # No configuration for the NLU pipeline was provided. The following "
         f"default pipeline was used to train your model.\n"
         f"# # If you'd like to customize it, uncomment and adjust the pipeline.\n"
-        f"# # See {constants.DOCS_URL_PIPELINE} for more information.\n"
+        f"# # See {rasa.shared.constants.DOCS_URL_PIPELINE} for more information.\n"
     ),
     "policies": (
         f"# # No configuration for policies was provided. The following default "
         f"policies were used to train your model.\n"
         f"# # If you'd like to customize them, uncomment and adjust the policies.\n"
-        f"# # See {constants.DOCS_URL_POLICIES} for more information.\n"
+        f"# # See {rasa.shared.constants.DOCS_URL_POLICIES} for more information.\n"
     ),
 }
 

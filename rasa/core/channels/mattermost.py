@@ -7,7 +7,7 @@ from sanic import Blueprint, response
 from sanic.request import Request
 from typing import Text, Dict, Any, List, Callable, Awaitable, Optional
 
-from rasa.constants import DOCS_URL_CONNECTORS
+from rasa.shared.constants import DOCS_URL_CONNECTORS
 from rasa.core.channels.channel import UserMessage, OutputChannel, InputChannel
 from sanic.response import HTTPResponse
 

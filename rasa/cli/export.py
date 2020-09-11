@@ -6,7 +6,7 @@ from typing import List, Text, Optional
 import rasa.cli.utils as cli_utils
 import rasa.core.utils as rasa_core_utils
 from rasa.cli.arguments import export as arguments
-from rasa.constants import DOCS_URL_TRACKER_STORES, DOCS_URL_EVENT_BROKERS
+from rasa.shared.constants import DOCS_URL_EVENT_BROKERS, DOCS_URL_TRACKER_STORES
 from rasa.exceptions import PublishingError
 from rasa.shared.exceptions import RasaException
 

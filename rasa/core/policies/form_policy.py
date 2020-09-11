@@ -1,7 +1,7 @@
 import logging
 from typing import List, Dict, Text, Optional, Any, Union, Tuple
 
-from rasa.constants import DOCS_URL_MIGRATION_GUIDE
+from rasa.shared.constants import DOCS_URL_MIGRATION_GUIDE
 from rasa.shared.core.constants import (
     ACTION_LISTEN_NAME,
     LOOP_NAME,
