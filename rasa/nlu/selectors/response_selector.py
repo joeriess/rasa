@@ -78,7 +78,6 @@ from rasa.nlu.constants import (
     RESPONSE_SELECTOR_RESPONSES_KEY,
     RESPONSE_SELECTOR_PREDICTION_KEY,
     RESPONSE_SELECTOR_RANKING_KEY,
-    PREDICTED_CONFIDENCE_KEY,
     RESPONSE_SELECTOR_DEFAULT_INTENT,
 )
 from rasa.shared.nlu.constants import (
@@ -87,6 +86,7 @@ from rasa.shared.nlu.constants import (
     RESPONSE,
     INTENT_RESPONSE_KEY,
     INTENT_NAME_KEY,
+    PREDICTED_CONFIDENCE_KEY,
 )
 
 from rasa.utils.tensorflow.model_data import RasaModelData

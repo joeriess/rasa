@@ -15,7 +15,6 @@ from rasa.nlu.constants import (
     RESPONSE_SELECTOR_PROPERTY_NAME,
     RESPONSE_SELECTOR_RESPONSES_KEY,
     RESPONSE_SELECTOR_PREDICTION_KEY,
-    INTENT_RANKING_KEY,
 )
 from rasa.shared.constants import DOCS_BASE_URL, DEFAULT_NLU_FALLBACK_INTENT_NAME
 from rasa.shared.core.constants import (
@@ -32,7 +31,11 @@ from rasa.shared.core.constants import (
     REQUESTED_SLOT,
     UTTER_PREFIX,
 )
-from rasa.shared.nlu.constants import INTENT_RESPONSE_KEY, INTENT_NAME_KEY
+from rasa.shared.nlu.constants import (
+    INTENT_RESPONSE_KEY,
+    INTENT_NAME_KEY,
+    INTENT_RANKING_KEY,
+)
 from rasa.shared.core.events import (
     UserUtteranceReverted,
     UserUttered,
